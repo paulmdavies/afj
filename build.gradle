@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "com.github.johnrengelman.shadow" version "4.0.3"
 }
 
 group 'com.afjtravel'
@@ -15,3 +16,12 @@ dependencies {
     compile group: 'io.dropwizard', name: 'dropwizard-core', version: '1.3.7'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'com.afjtravel.website.ServiceApplication',
+        )
+    }
+}
+
