@@ -22,7 +22,7 @@ public class ServiceApplication extends Application<ServiceConfiguration> {
     @Override
     public void run(ServiceConfiguration configuration,
                     Environment environment) {
-        environment.jersey().register(new RootResource());
+        environment.jersey().register(new HeartbeatResource());
     }
 
 }

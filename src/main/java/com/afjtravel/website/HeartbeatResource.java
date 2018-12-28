@@ -8,7 +8,7 @@ import javax.ws.rs.core.Response;
 
 @Path("/heartbeat")
 @Produces(MediaType.APPLICATION_JSON)
-public class RootResource {
+public class HeartbeatResource {
     @GET
     public Response heartbeat() {
         return Response.ok().build();
