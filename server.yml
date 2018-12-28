@@ -1,1 +1,17 @@
 defaultName: Stranger
+database:
+  # the name of your JDBC driver
+  driverClass: com.mysql.jdbc.Driver
+
+  # the username
+  user: tuzahrac_query
+
+  # the password
+  password: ${DB_PASS}
+
+  # the JDBC URL
+  url: jdbc:mysql://tuzahra.co.uk/tuzahrac_travel
+
+  # any properties specific to your JDBC driver:
+  properties:
+    charSet: UTF-8
