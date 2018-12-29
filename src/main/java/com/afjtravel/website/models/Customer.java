@@ -1,26 +1,32 @@
 package com.afjtravel.website.models;
 
 public class Customer {
-    private final String name;
-    private final String contactName;
-    private final String contactEmail;
+    private final String title;
+    private final String firstName;
+    private final String surname;
+    private final String customerLevel;
 
-    public Customer(String name, String contactName, String contactEmail) {
-        this.name = name;
-        this.contactName = contactName;
-        this.contactEmail = contactEmail;
+    public Customer(String title, String firstName, String surname, String customerLevel) {
+        this.title = title;
+        this.firstName = firstName;
+        this.surname = surname;
+        this.customerLevel = customerLevel;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getContactName() {
-        return contactName;
+    public String getTitle() {
+        return title;
     }
 
-    public String getContactEmail() {
-        return contactEmail;
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getCustomerLevel() {
+        return customerLevel;
     }
 }
 

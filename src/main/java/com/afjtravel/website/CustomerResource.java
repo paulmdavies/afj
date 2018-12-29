@@ -4,7 +4,6 @@ import com.afjtravel.website.database.CustomerDAO;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -18,8 +17,7 @@ public class CustomerResource {
     }
 
     @GET
-    @Path("/{customerName}")
-    public CustomerView getCustomer(@PathParam("customerName") String customerName) {
-        return new CustomerView(customerDao, customerName);
+    public CustomersView getCustomers() {
+        return new CustomersView(customerDao);
     }
 }

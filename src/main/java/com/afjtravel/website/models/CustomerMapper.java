@@ -11,9 +11,10 @@ public class CustomerMapper implements ResultSetMapper<Customer>
     public Customer map(int index, ResultSet r, StatementContext ctx) throws SQLException
     {
         return new Customer(
-            r.getString("CompanyName"),
-            r.getString("FirstName") + " " + r.getString("LastName"),
-            r.getString("PrimaryEmail")
+                r.getString("TitleDesc"),
+                r.getString("FirstName"),
+                r.getString("LastName"),
+                r.getString("CustomerLevelDesc")
         );
     }
 }

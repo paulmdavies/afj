@@ -8,9 +8,6 @@ import java.sql.ResultSet;
 import java.util.List;
 
 public interface CustomerDAO {
-    @SqlQuery("SELECT CompanyName FROM tuzahrac_travel.customer")
-    List<String> getNames();
-
-    @SqlQuery("SELECT * FROM tuzahrac_travel.customer WHERE CompanyName=:companyName")
-    Customer getCustomerByName(@Bind("companyName") String companyName);
+    @SqlQuery("SELECT title.TitleDesc, customer.FirstName, customer.LastName, customerlevel.CustomerLevelDesc FROM tuzahrac_travel.customer INNER JOIN tuzahrac_travel.title ON customer.Title = title.TitleID INNER JOIN tuzahrac_travel.customerlevel ON customer.CustomerLevelID = customerlevel.CustomerLevelID ORDER BY LastName ASC")
+    List<Customer> listCustomers();
 }

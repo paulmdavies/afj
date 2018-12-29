@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AFJ Travel</title>
+</head>
+<body>
+<h1>AFJ Travel Website</h1>
+<h2>Customers</h2>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>First Name</th>
+        <th>Surname</th>
+        <th>Customer Level</th>
+    </tr>
+    {{#customers}}
+    <tr>
+        <td>{{title}}</td>
+        <td>{{firstName}}</td>
+        <td>{{surname}}</td>
+        <td>{{customerLevel}}</td>
+    </tr>
+    {{/customers}}
+</table>
+</body>
+</html>

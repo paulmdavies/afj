@@ -15,19 +15,4 @@ public class IndexView extends View {
         super("index.mustache");
         this.customerDAO = customerDAO;
     }
-
-    public List<Map<String, String>> getCustomerNames() {
-        return customerDAO
-                .getNames()
-                .stream()
-                .filter(s -> null != s)
-                .sorted(String::compareToIgnoreCase)
-                .distinct()
-                .map(s -> {
-                    HashMap<String, String> map = new HashMap<>();
-                    map.put("name", s);
-                    return map;
-                })
-                .collect(Collectors.toList());
-    }
 }
