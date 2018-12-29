@@ -1,5 +1,6 @@
 package com.afjtravel.website;
 
+import com.afjtravel.website.database.CustomerDAO;
 import io.dropwizard.views.View;
 
 import java.util.HashMap;
@@ -8,15 +9,16 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class IndexView extends View {
-    private final List<String> customerNames;
+    private final CustomerDAO customerDAO;
 
-    protected IndexView(List<String> customerNames) {
+    protected IndexView(CustomerDAO customerDAO) {
         super("index.mustache");
-        this.customerNames = customerNames;
+        this.customerDAO = customerDAO;
     }
 
     public List<Map<String, String>> getCustomerNames() {
-        return customerNames
+        return customerDAO
+                .getNames()
                 .stream()
                 .filter(s -> null != s)
                 .sorted(String::compareToIgnoreCase)
