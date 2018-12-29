@@ -1,6 +1,7 @@
 package com.afjtravel.website;
 
 import com.afjtravel.website.database.CustomerDAO;
+import com.afjtravel.website.models.CustomerMapper;
 import io.dropwizard.Application;
 import io.dropwizard.configuration.EnvironmentVariableSubstitutor;
 import io.dropwizard.configuration.SubstitutingSourceProvider;
@@ -36,10 +37,14 @@ public class ServiceApplication extends Application<ServiceConfiguration> {
                     Environment environment) {
         final DBIFactory factory = new DBIFactory();
         final DBI jdbi = factory.build(environment, configuration.getDataSourceFactory(), "mysql");
+
+        jdbi.registerMapper(new CustomerMapper());
+
         final CustomerDAO customerDao = jdbi.onDemand(CustomerDAO.class);
 
         environment.jersey().register(new HeartbeatResource());
         environment.jersey().register(new IndexResource(customerDao));
+        environment.jersey().register(new CustomerResource(customerDao));
     }
 
 }
