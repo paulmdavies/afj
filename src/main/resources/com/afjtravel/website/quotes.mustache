@@ -1,23 +1,32 @@
+<!--design of web page-->
 {{> header}}
 <h2>Quotes</h2>
 <table class="datatable">
     <thead>
         <tr>
+            <!--Headers at top of table-->
             <th>Reference</th>
             <th>Quote Status</th>
             <th>First Name</th>
             <th>Surname</th>
             <th>Company Name</th>
+            <th>Destination</th>
+            <th>Start Time</th>
         </tr>
     </thead>
     <tbody>
+    <!--to match quotemapper-->
     {{#quotes}}
         <tr>
+            <!--field names to match quote-->
             <td>{{reference}}</td>
             <td>{{quoteStatus}}</td>
             <td>{{firstName}}</td>
             <td>{{surname}}</td>
             <td>{{companyName}}</td>
+            <td>{{street}} {{town}} {{county}} {{postcode}} ({{lat}} {{lng}})</td>
+            <td>{{startTime}}</td>
+            <!--<td>London</td>-->
         </tr>
     {{/quotes}}
     </tbody>

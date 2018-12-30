@@ -7,6 +7,6 @@ import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import java.util.List;
 
 public interface QuoteDAO {
-    @SqlQuery("SELECT quote.QuoteID,quotestatus.QuoteStatusDesc,customer.FirstName,customer.LastName,customer.CompanyName FROM tuzahrac_travel.quote INNER JOIN tuzahrac_travel.customer ON quote.CustomerID=customer.CustomerID INNER JOIN tuzahrac_travel.quotestatus ON quote.QuoteStatusID=quotestatus.QuoteStatusID ORDER BY quote.QuoteID desc")
+    @SqlQuery("SELECT quote.QuoteID, quote.StartTime, quotestatus.QuoteStatusDesc,customer.FirstName,customer.LastName,customer.CompanyName, location.street, location.town, location.county, location.postcode, location.lat, location.lng FROM tuzahrac_travel.quote INNER JOIN tuzahrac_travel.customer ON quote.CustomerID=customer.CustomerID INNER JOIN tuzahrac_travel.quotestatus ON quote.QuoteStatusID=quotestatus.QuoteStatusID INNER JOIN tuzahrac_travel.location ON quote.ToLocationID=location.LocationID ORDER BY quote.QuoteID desc")
     List<Quote> listQuotes();
 }

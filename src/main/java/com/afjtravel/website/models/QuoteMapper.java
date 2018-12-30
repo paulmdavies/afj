@@ -1,3 +1,5 @@
+// translating sql query results to java
+
 package com.afjtravel.website.models;
 
 import org.skife.jdbi.v2.StatementContext;
@@ -15,7 +17,14 @@ public class QuoteMapper implements ResultSetMapper<Quote>
                 r.getString("QuoteStatusDesc"),
                 r.getString("FirstName"),
                 r.getString("LastName"),
-                r.getString("CompanyName")
+                r.getString("CompanyName"),
+                r.getString("Street"),
+                r.getString("Town"),
+                r.getString("County"),
+                r.getString("Postcode"),
+                r.getString("Lat"),
+                r.getString("Lng"),
+                r.getString("StartTime")
         );
     }
 }
