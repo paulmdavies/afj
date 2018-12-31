@@ -15,6 +15,7 @@ public class Quote {
     private final String lat;
     private final String lng;
     private final String startTime;
+    private final String generatedPrice;
 
     public Quote(
             String reference,
@@ -28,7 +29,8 @@ public class Quote {
             String postcode,
             String lat,
             String lng,
-            String startTime
+            String startTime,
+            String generatedPrice
     ) {
         this.reference = reference;
         this.quoteStatus = quoteStatus;
@@ -42,6 +44,7 @@ public class Quote {
         this.lat = lat;
         this.lng = lng;
         this.startTime = startTime;
+        this.generatedPrice = generatedPrice;
     }
 
     public String getReference() {
@@ -66,6 +69,7 @@ public class Quote {
     public String getLat() { return lat; }
     public String getLng() { return lng; }
     public String getStartTime() { return startTime; }
+    public String getGeneratedPrice() { return generatedPrice; }
 
 
 //    public String getStreet() { return "naseby"; }

@@ -24,7 +24,8 @@ public class QuoteMapper implements ResultSetMapper<Quote>
                 r.getString("Postcode"),
                 r.getString("Lat"),
                 r.getString("Lng"),
-                r.getString("StartTime")
+                r.getString("StartTime"),
+                r.getString("GeneratedPrice")
         );
     }
 }
