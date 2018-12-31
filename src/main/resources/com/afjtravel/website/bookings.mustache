@@ -1,0 +1,36 @@
+<!--design of web page-->
+{{> header}}
+<h2>Bookings</h2>
+<table class="datatable">
+    <thead>
+        <tr>
+            <!--Headers at top of table-->
+            <th>Reference</th>
+            <th>Booking Status</th>
+            <th>First Name</th>
+            <th>Surname</th>
+            <th>Company Name</th>
+            <th>Destination</th>
+            <th>Start Time</th>
+            <th>Quoted Price</th>
+        </tr>
+    </thead>
+    <tbody>
+    <!--to match bookingmapper-->
+    {{#bookings}}
+        <tr>
+            <!--field names to match booking-->
+            <td>{{reference}}</td>
+            <td>{{quoteStatus}}</td>
+            <td>{{firstName}}</td>
+            <td>{{surname}}</td>
+            <td>{{companyName}}</td>
+            <td>{{street}} {{town}} {{county}} {{postcode}} ({{lat}} {{lng}})</td>
+            <td>{{startTime}}</td>
+            <td>£{{generatedPrice}}</td>
+            <!--<td>London</td>-->
+        </tr>
+    {{/bookings}}
+    </tbody>
+</table>
+{{> footer}}

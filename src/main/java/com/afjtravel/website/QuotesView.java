@@ -1,8 +1,6 @@
 package com.afjtravel.website;
 
-import com.afjtravel.website.database.CustomerDAO;
 import com.afjtravel.website.database.QuoteDAO;
-import com.afjtravel.website.models.Customer;
 import com.afjtravel.website.models.Quote;
 import io.dropwizard.views.View;
 
